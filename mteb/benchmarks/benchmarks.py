@@ -2003,6 +2003,26 @@ VIDORE_V2 = Benchmark(
 """,
 )
 
+KoVIDORE = VIDORE_V2 = Benchmark(
+    name="KoViDoRe",
+    tasks=get_tasks(
+        tasks=[
+            "KoVidoreMIRRetrieval",
+            "KoVidoreVQARetrieval",
+        ],
+    ),
+    description="Retrieve associated pages according to questions.",
+    reference="https://arxiv.org/abs/2407.01449", # TODO: update this citation when the paper is published
+    citation=r"""
+@article{mace2025vidorev2, 
+  author = {Macé, Quentin and Loison António and Faysse, Manuel},
+  journal = {arXiv preprint arXiv:2505.17166},
+  title = {ViDoRe Benchmark V2: Raising the Bar for Visual Retrieval},
+  year = {2025},
+}
+""",
+)
+
 VISUAL_DOCUMENT_RETRIEVAL = Benchmark(
     name="VisualDocumentRetrieval",
     display_name="Visual Document Retrieval",
