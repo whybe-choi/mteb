@@ -401,7 +401,7 @@ class KoVidoreVQARetrieval(AbsTaskAny2AnyRetrieval):
         reference="https://arxiv.org/pdf/2407.01449",
         dataset={
             "path": "whybe-choi/kovidore-vqa-v0.1-beir-subsampled",
-            "revision": "07f675ce8c535ebf8d4aa0f94b2a2d2dd7078ae6",
+            "revision": "488af5544869920e3e412bf3de422cfe25dd936a",
         },
         type="DocumentUnderstanding",
         category="t2i",
