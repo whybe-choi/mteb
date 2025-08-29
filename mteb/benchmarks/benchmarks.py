@@ -2009,6 +2009,7 @@ KoVIDORE = VIDORE_V2 = Benchmark(
         tasks=[
             "KoVidoreMIRRetrieval",
             "KoVidoreVQARetrieval",
+            "KoVidoreSlideRetrieval",
         ],
     ),
     description="Retrieve associated pages according to questions.",
