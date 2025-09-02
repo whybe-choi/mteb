@@ -2003,13 +2003,14 @@ VIDORE_V2 = Benchmark(
 """,
 )
 
-KoVIDORE = VIDORE_V2 = Benchmark(
+KoVIDORE = Benchmark(
     name="KoViDoRe",
     tasks=get_tasks(
         tasks=[
             "KoVidoreMIRRetrieval",
             "KoVidoreVQARetrieval",
             "KoVidoreSlideRetrieval",
+            "KoVidoreOfficeRetrieval",
         ],
     ),
     description="Retrieve associated pages according to questions.",
