@@ -2011,6 +2011,7 @@ KoVIDORE = Benchmark(
             "KoVidoreVQARetrieval",
             "KoVidoreSlideRetrieval",
             "KoVidoreOfficeRetrieval",
+            "KoVidoreFinOCRRetrieval",
         ],
     ),
     description="Retrieve associated pages according to questions.",

@@ -564,3 +564,60 @@ class KoVidoreOfficeRetrieval(AbsTaskAny2AnyRetrieval):
         )
 
         self.data_loaded = True
+        
+class KoVidoreFinOCRRetrieval(AbsTaskAny2AnyRetrieval):
+    metadata = TaskMetadata(
+        name="KoVidoreFinOCRRetrieval",
+        description="Retrieve associated pages according to questions.",
+        reference="https://arxiv.org/pdf/2407.01449",
+        dataset={
+            "path": "whybe-choi/kovidore-finocr-v0.2-beir-subsampled",
+            "revision": "fcc9cd95812ed6687e293cbdd20f4f45fdc85a59",
+        },
+        type="DocumentUnderstanding",
+        category="t2i",
+        eval_splits=["test"],
+        eval_langs=["kor-Hang"],
+        main_score="ndcg_at_5",
+        date=("2025-01-01", "2025-03-01"),
+        domains=["Academic"],
+        task_subtypes=["Image Text Retrieval"],
+        license="mit",
+        annotations_creators="derived",
+        dialect=[],
+        modalities=["text", "image"],
+        sample_creation="found",
+        bibtex_citation=r"""
+@article{mace2025vidorev2, # TODO: update this bibtex
+  author = {Macé, Quentin and Loison António and Faysse, Manuel},
+  journal = {arXiv preprint arXiv:2505.17166},
+  title = {ViDoRe Benchmark V2: Raising the Bar for Visual Retrieval},
+  year = {2025},
+}
+""",
+        prompt={"query": "Find a screenshot that relevant to the user's question."}, # TODO: Is this prompt correct?
+        descriptive_stats={ # TODO: Update this stats
+            "n_samples": None,
+            "avg_character_length": {
+                "test": {
+                    "average_document_length": 1.0,
+                    "num_documents": 27,
+                    "num_queries": 640,
+                    "average_relevant_docs_per_query": 1.0,
+                }
+            },
+        },
+    )
+
+    def load_data(self, **kwargs):
+        if self.data_loaded:
+            return
+
+        self.corpus, self.queries, self.relevant_docs = _load_data(
+            path=self.metadata_dict["dataset"]["path"],
+            splits=self.metadata_dict["eval_splits"],
+            cache_dir=kwargs.get("cache_dir", None),
+            revision=self.metadata_dict["dataset"]["revision"],
+        )
+
+        self.data_loaded = True
