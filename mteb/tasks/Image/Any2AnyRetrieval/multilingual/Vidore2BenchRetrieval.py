@@ -400,8 +400,8 @@ class KoVidoreVQARetrieval(AbsTaskAny2AnyRetrieval):
         description="Retrieve associated pages according to questions.",
         reference="https://arxiv.org/pdf/2407.01449",
         dataset={
-            "path": "whybe-choi/kovidore-vqa-v0.1-beir-subsampled",
-            "revision": "488af5544869920e3e412bf3de422cfe25dd936a",
+            "path": "whybe-choi/kovidore-vqa-v0.2-beir-subsampled",
+            "revision": "65771fa2bdd649c77faaab1b67378d5a782ae547",
         },
         type="DocumentUnderstanding",
         category="t2i",
