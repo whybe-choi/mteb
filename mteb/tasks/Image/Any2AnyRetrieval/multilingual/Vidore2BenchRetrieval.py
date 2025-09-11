@@ -342,7 +342,7 @@ class KoVidoreMIRRetrieval(AbsTaskAny2AnyRetrieval):
         reference="https://arxiv.org/pdf/2407.01449",
         dataset={
             "path": "whybe-choi/kovidore-mir-v1.0-beir",
-            "revision": "whybe-choi/kovidore-mir-v1.0-beir",
+            "revision": "8a69ee34933fa2fb32ee5a20b1f537e99a22529f",
         },
         type="DocumentUnderstanding",
         category="t2i",
